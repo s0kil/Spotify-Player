@@ -11,3 +11,7 @@ Start Parcel
 ## Build Production
 
 `npm run build`
+
+## Project Specification
+
+[Spotify Player](./Spotify-Player.md)
