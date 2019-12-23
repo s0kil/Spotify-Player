@@ -1,0 +1,26 @@
+{
+  "name": "spotify-player",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Spotify Web Player",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0kil/Spotify-Player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s0kil/Spotify-Player/issues"
+  },
+  "homepage": "https://github.com/s0kil/Spotify-Player#readme",
+  "browserslist": [
+    "last 1 chrome versions"
+  ],
+  "devDependencies": {
+    "parcel-bundler": "^1.0.0",
+    "parcel-plugin-svelte": "^4.0.0",
+    "svelte": "^3.0.0"
+  }
+}
