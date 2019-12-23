@@ -14,4 +14,4 @@ Start Parcel
 
 ## Project Specification
 
-[Spotify Player](./Spotify-Player.md)
+[Spotify Player](./docs/Spotify-Player.md)
