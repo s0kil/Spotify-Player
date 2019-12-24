@@ -1,8 +1,13 @@
 <script>
-  import Logo from "./Logo.svelte";
+  import {Router} from "svelte-routing";
 
-  import {link} from "svelte-routing";
   import routes from "../routes/index";
+
+  import Logo from "./Logo.svelte";
+  import NavLink from "./NavLink.svelte";
+  import HomeIcon from "./icons/Home.svelte";
+  import SearchIcon from "./icons/Search.svelte";
+  import LibraryIcon from "./icons/Library.svelte";
 </script>
 
 <style>
@@ -14,22 +19,66 @@
   }
 
   .logo {
-    width: 131px;
+    width: 130px;
     height: 40px;
     padding-left: 24px;
+    margin-bottom: 18px;
   }
 
-  .logo a {
-    color: rgb(255, 255, 255);
+  .nav-item {
+    height: 40px;
+    padding: 0 24px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item span {
+    /*TODO : Figure Out Why Element Is Not Vertically Aligned*/
+    margin-left: 16px;
+  }
+
+  :global(.nav-item .nav-link-active:before) {
+    content: "";
+    width: 4px;
+    display: block;
+    background-color: #1ed760;
+
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
   }
 </style>
 
-<nav>
-  <div class="logo">
-    <a href="{routes.home}" use:link>
-      <Logo/>
-    </a>
-  </div>
+<Router>
+  <nav>
+    <div class="logo">
+      <NavLink to="{routes.home}">
+        <Logo/>
+      </NavLink>
+    </div>
 
-
-</nav>
+    <ul>
+      <li class="nav-item">
+        <NavLink to="{routes.home}">
+          <HomeIcon/>
+          <span>Home</span>
+        </NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink to="{routes.search.index}">
+          <SearchIcon/>
+          <span>Search</span>
+        </NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink to="{routes.collection.index}">
+          <LibraryIcon/>
+          <span>Your Library</span>
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</Router>
