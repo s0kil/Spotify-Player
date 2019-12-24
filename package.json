@@ -21,11 +21,10 @@
   "devDependencies": {
     "parcel-bundler": "^1.0.0",
     "parcel-plugin-svelte": "^4.0.0",
-<<<<<<< HEAD
     "svelte": "^3.0.0",
     "svelte-routing": "^1.4.0"
-=======
-    "svelte": "^3.16.7"
->>>>>>> master
+  },
+  "dependencies": {
+    "routes": "^2.1.0"
   }
 }
