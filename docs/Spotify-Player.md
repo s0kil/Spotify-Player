@@ -11,11 +11,12 @@
 
 ### Sections
 
-- Navigation Aside
+- Navigation Aside [WIP By @s0kil](https://github.com/s0kil)
   - Home
   - Search
   - Your Library
   - Playlists
+
 - Navigation Top Bar
   - History Router (Backward, Forward Buttons), Upgrade Button, Login Button Bar
   - Account Button
