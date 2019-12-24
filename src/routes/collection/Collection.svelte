@@ -3,5 +3,5 @@
   import routes from "../index";
 
   // Redirect To Playlists Collection
-  navigate(routes.collection.playlists)
+  navigate(routes.collection.playlists, {replace: true});
 </script>

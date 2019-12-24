@@ -14,17 +14,15 @@
   "bugs": {
     "url": "https://github.com/s0kil/Spotify-Player/issues"
   },
-  "homepage": "https://github.com/s0kil/Spotify-Player#readme",
+  "homepage": "https://github.com/s0kil/Spotify-Player",
   "browserslist": [
     "last 1 chrome versions"
   ],
   "devDependencies": {
+    "modern-normalize": "^0.6.0",
     "parcel-bundler": "^1.0.0",
     "parcel-plugin-svelte": "^4.0.0",
     "svelte": "^3.0.0",
-    "svelte-routing": "^1.4.0"
-  },
-  "dependencies": {
-    "routes": "^2.1.0"
+    "svelte-routing": "^1.0.0"
   }
 }
