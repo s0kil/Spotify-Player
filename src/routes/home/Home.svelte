@@ -8,8 +8,9 @@
 
   onMount(async () => {
     if ($tokenExists) {
-      let data = await SpotifyService.getMyRecentlyPlayedTracks();
-      console.log(data);
+      // TODO Load User Recently Played Tracks
+      // let data = await SpotifyService.getMyRecentlyPlayedTracks();
+      // console.log(data);
     }
   });
 </script>

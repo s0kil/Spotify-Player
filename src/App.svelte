@@ -54,6 +54,7 @@
 
   #main-body {
     grid-column: mainbody;
+    color: rgb(255, 255, 255);
     background-color: rgb(18, 18, 18);
   }
 </style>
