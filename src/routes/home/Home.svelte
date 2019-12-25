@@ -1,29 +1,42 @@
 <script>
+  import {tokenExists} from "../../store";
+  import SpotifyService from "../../services/spotify";
   import {onMount} from "svelte";
 
-  import SpotifyService from "../../services/spotify";
-
   import SpotifyLogin from "../../components/SpotifyLogin.svelte";
+  import PlaylistCard from "../../components/PlaylistCard.svelte";
 
-  let playlists;
-  onMount(() => {
-    // TODO : Cache Response In Global Store
-    playlists = SpotifyService.getFeaturedPlaylists();
+  onMount(async () => {
+    if ($tokenExists) {
+      let data = await SpotifyService.getMyRecentlyPlayedTracks();
+      console.log(data);
+    }
   });
 </script>
 
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 32px;
+  }
+</style>
+
 <SpotifyLogin/>
 
-{#if playlists}
-    {#await playlists}
+{#if $tokenExists}
+    {#await SpotifyService.getFeaturedPlaylists()}
       <p>Loading Featured Playlists</p>
     {:then playlistsData}
-        {#each playlistsData.playlists.items as playlist}
-          <p>{playlist.name}</p>
-          <p>{@html playlist.description}</p>
-          <img src="{playlist.images[0].url}" alt="{playlist.name}">
-          <hr>
-        {/each}
+      <div>
+          {#each playlistsData.playlists.items as playlist}
+            <PlaylistCard
+                name="{playlist.name}"
+                tagline="{playlist.description}"
+                image="{playlist.images[0].url}"
+            />
+          {/each}
+      </div>
     {:catch error}
       <h1>Error</h1>
       <code>{error.response}</code>

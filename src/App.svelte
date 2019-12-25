@@ -4,10 +4,12 @@
   import "./index.css"; // Global Styles
 
   import {onMount} from "svelte";
+  import {HashGet} from "hashget";
   import {Router, Route} from "svelte-routing";
   import scrollbar from "simple-scrollbar"; // TODO : Rewrite Scrollbar In Svelte?
 
   import routes from "./routes/index";
+  import {spotifyAccessToken} from "./store";
 
   import Home from "./routes/home/Home.svelte";
   import Search from "./routes/search/Search.svelte";
@@ -22,9 +24,21 @@
 
   import NavBar from "./components/NavBar.svelte";
 
-  onMount(() => {
+  onMount(async () => {
     // Initialize Scrollbar
     scrollbar.initEl(document.getElementById("main-body"));
+
+    if (window.location.hash.length) {
+      let locHash = new HashGet();
+      // If User Logs In, Update Access Token
+      if (locHash.has("access_token")) {
+        // window.location.hash = ""; // Clean The URL
+        spotifyAccessToken.set(locHash.getValue("access_token"))
+      }
+    } else {
+      let anonymousAccessToken = await fetch(`${process.env.Cors_Proxy_Server}https://open.spotify.com/access_token`).then(r => r.json());
+      spotifyAccessToken.set(anonymousAccessToken.accessToken);
+    }
   });
 </script>
 
@@ -33,7 +47,6 @@
     width: 100vw;
     position: fixed;
 
-    /* Thanks To : https://github.com/rachelandrew/cssgrid-ama/issues/24 */
     display: grid;
     grid-template-columns: [navbar] 230px [mainbody] 1fr;
     grid-template-rows: 100vh auto;
@@ -41,6 +54,7 @@
 
   #main-body {
     grid-column: mainbody;
+    background-color: rgb(18, 18, 18);
   }
 </style>
 
