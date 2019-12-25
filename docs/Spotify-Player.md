@@ -15,7 +15,7 @@
   - Home
   - Search
   - Your Library
-  - Playlists
+  - `If User Logged In` Playlists
 
 - Navigation Top Bar
   - History Router (Backward, Forward Buttons), Upgrade Button, Login Button Bar
