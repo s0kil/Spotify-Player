@@ -18,5 +18,7 @@
       <hr>
     {/each}
 {:catch error}
-  <p>{error.message}</p>
+  <h1>Error</h1>
+  <code>{error.response}</code>
+  {console.error(error)}
 {/await}
