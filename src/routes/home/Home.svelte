@@ -7,6 +7,7 @@
 
   let playlists;
   onMount(() => {
+    // TODO : Cache Response In Global Store
     playlists = SpotifyService.getFeaturedPlaylists();
   });
 </script>
