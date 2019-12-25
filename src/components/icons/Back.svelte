@@ -2,7 +2,7 @@
   svg {
     width: 22px;
     height: 22px;
-    opacity: 1;
+    opacity: 0.8;
   }
 </style>
 

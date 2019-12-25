@@ -27,8 +27,8 @@
     grid-template-rows: 100vh auto;
     grid-template-columns: 230px auto;
     grid-template-areas: "navbar mainbody";
-    background-color: #121212;
-    color: #fff;
+    /* background-color: #121212;
+    color: #fff; */
   }
 
   #main-body {
