@@ -25,6 +25,14 @@
   .back, .forward {
     height: 34px;
     width: 34px;
+    padding: 0;
+    background-color: rgb(0, 0, 0,0.7);
+    border-radius: 50%;
+    border: none;
+  }
+
+  .back {
+    margin-right: 16px;
   }
 </style>
 
