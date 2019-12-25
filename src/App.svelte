@@ -1,8 +1,11 @@
 <script>
   import "modern-normalize"; // Normalize Browsers Default Style
+  import "simple-scrollbar/simple-scrollbar.css"; // TODO : Add Custom Scrollbar Styles
   import "./index.css"; // Global Styles
 
+  import {onMount} from "svelte";
   import {Router, Route} from "svelte-routing";
+  import scrollbar from "simple-scrollbar"; // TODO : Rewrite Scrollbar In Svelte?
 
   import routes from "./routes/index";
 
@@ -18,18 +21,26 @@
   import MadeForYouCollection from "./routes/collection/MadeForYou.svelte";
 
   import NavBar from "./components/NavBar.svelte";
+
+  onMount(() => {
+    // Initialize Scrollbar
+    scrollbar.initEl(document.getElementById("main-body"));
+  });
 </script>
 
 <style>
   main {
+    width: 100vw;
+    position: fixed;
+
+    /* Thanks To : https://github.com/rachelandrew/cssgrid-ama/issues/24 */
     display: grid;
+    grid-template-columns: [navbar] 230px [mainbody] 1fr;
     grid-template-rows: 100vh auto;
-    grid-template-columns: 230px auto;
-    grid-template-areas: "navbar mainbody";
   }
 
   #main-body {
-    grid-area: mainbody;
+    grid-column: mainbody;
   }
 </style>
 
