@@ -1,15 +1,16 @@
 <script>
   import { Router } from "svelte-routing";
-  import Back from "./icons/Forward.svelte";
-  import Forward from "./icons/Back.svelte";
+  import Forward from "./icons/Forward.svelte";
+  import Back from "./icons/Back.svelte";
   import routes from "../routes/index";
 </script>
 
 <style>
   header {
-    position: fixed;
-    left: 230px;
-    width: 85vw;
+    grid-area: mainbody;
+    position: sticky;
+    top:0;
+    width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
