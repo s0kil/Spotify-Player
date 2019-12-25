@@ -15,11 +15,16 @@
     display: flex;
     align-items: center;
     padding: 16px 24px;
+    background-color: rgb(0, 0, 0, 0.4);
   }
   header > div {
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+
+  button {
+        border: none;
   }
 
   .back, .forward {
@@ -28,12 +33,28 @@
     padding: 0;
     background-color: rgb(0, 0, 0,0.7);
     border-radius: 50%;
-    border: none;
   }
 
   .back {
     margin-right: 16px;
   }
+  .sign-up,
+  .login {
+    width: 120px;
+    height: 100%;
+    font-weight: bolder;
+  }
+  .sign-up {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .login {
+    background-color: #fff;
+    color: #181818;
+    border-radius: 500px;
+  }
+
 </style>
 
 <header>
@@ -47,7 +68,12 @@
       </button>
     </div>
     <div>
-      UserLink
+      <button class="sign-up">
+        SIGN UP
+      </button>
+      <button class="login">
+        LOG IN
+      </button>
     </div>
   </div>
 </header>
