@@ -18,6 +18,7 @@
   import MadeForYouCollection from "./routes/collection/MadeForYou.svelte";
 
   import NavBar from "./components/NavBar.svelte";
+  import Header from "./components/Header.svelte";
 </script>
 
 <style>
@@ -30,12 +31,13 @@
 
   #main-body {
     grid-area: mainbody;
+    padding-top: 80px;
   }
 </style>
 
 <main>
   <NavBar/>
-
+  <Header />
   <div id="main-body">
     <Router>
       <Route path="{routes.collection.madeForYou}" component="{MadeForYouCollection}"/>
