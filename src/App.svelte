@@ -62,10 +62,10 @@
 <main>
   <NavBar/>
 
-  <div id="main-body">
-    <Header/>
+  <Router>
+    <div id="main-body">
+      <Header/>
 
-    <Router>
       <Route path="{routes.collection.madeForYou}" component="{MadeForYouCollection}"/>
       <Route path="{routes.collection.playlists}" component="{PlaylistsCollection}"/>
       <Route path="{routes.collection.podcasts}" component="{PodcastsCollection}"/>
@@ -77,6 +77,7 @@
       <Route path="{routes.settings.account}" component="{AccountSettings}"/>
       <Route path="{routes.search.index}" component="{Search}"/>
       <Route path="{routes.home}" component="{Home}"/>
-    </Router>
-  </div>
+    </div>
+  </Router>
+
 </main>

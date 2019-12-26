@@ -1,4 +1,7 @@
 <script>
+  import {getContext} from "svelte";
+  import {ROUTER} from "svelte-routing/src/contexts";
+
   import Back from "./icons/Back.svelte";
   import Forward from "./icons/Forward.svelte";
 
@@ -7,6 +10,14 @@
 &redirect_uri=${encodeURIComponent(process.env.Redirect_URI)}
 &response_type=token
 &scope=user-read-recently-played`;
+
+
+  let {activeRoute} = getContext(ROUTER);
+
+  let currentRoute = window.location.pathname;
+
+  // Reactive statement to update `currentRoute` with the location path
+  $: if ($activeRoute) currentRoute = $activeRoute.uri;
 </script>
 
 <style>
