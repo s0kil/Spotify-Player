@@ -23,7 +23,9 @@
   import MadeForYouCollection from "./routes/collection/MadeForYou.svelte";
 
   import NavBar from "./components/NavBar.svelte";
+<<<<<<< HEAD
   import Header from "./components/Header.svelte";
+=======
 
   onMount(async () => {
     // Initialize Scrollbar
@@ -41,30 +43,42 @@
       spotifyAccessToken.set(anonymousAccessToken.accessToken);
     }
   });
+>>>>>>> master
 </script>
 
 <style>
   main {
+    width: 100vw;
+    position: fixed;
+
     display: grid;
     grid-template-columns: [navbar] 230px [mainbody] 1fr;
-    grid-template-rows: [navbar mainbody] 100vh;
+    grid-template-rows: 100vh auto;
+<<<<<<< HEAD
+    grid-template-columns: 230px auto;
+    grid-template-areas: "navbar mainbody";
+    /* background-color: #121212;
+    color: #fff; */
   }
 
   #main-body {
-    grid-row: mainbody;
-    grid-column: mainbody;
+    grid-area: mainbody;
+    padding-top: 80px;
+=======
+  }
 
+  #main-body {
+    grid-column: mainbody;
     color: rgb(255, 255, 255);
     background-color: rgb(18, 18, 18);
+>>>>>>> master
   }
 </style>
 
 <main>
   <NavBar/>
-
+  <Header />
   <div id="main-body">
-    <Header/>
-
     <Router>
       <Route path="{routes.collection.madeForYou}" component="{MadeForYouCollection}"/>
       <Route path="{routes.collection.playlists}" component="{PlaylistsCollection}"/>

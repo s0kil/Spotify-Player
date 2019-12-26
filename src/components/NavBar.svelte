@@ -12,7 +12,8 @@
 
 <style>
   nav {
-    grid-area: navbar;
+    grid-column: navbar;
+    grid-row: navbar;
 
     padding-top: 24px;
     background-color: rgb(0, 0, 0);
