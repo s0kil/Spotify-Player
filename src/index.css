@@ -21,3 +21,9 @@ h4 {
   border: 0;
   padding: 0;
 }
+
+.ss-scroll {
+  background: #3f3f3f;
+  width: 12px;
+  border-radius: 0;
+}

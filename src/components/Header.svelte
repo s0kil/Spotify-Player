@@ -13,7 +13,6 @@
 
 
   let {activeRoute} = getContext(ROUTER);
-
   let currentRoute = window.location.pathname;
 
   // Reactive statement to update `currentRoute` with the location path

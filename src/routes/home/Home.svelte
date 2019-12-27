@@ -1,7 +1,8 @@
 <script>
+  import {onMount} from "svelte";
+
   import {tokenExists} from "../../store";
   import SpotifyService from "../../services/spotify";
-  import {onMount} from "svelte";
 
   import PlaylistCard from "../../components/PlaylistCard.svelte";
 

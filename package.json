@@ -5,7 +5,7 @@
   "description": "Spotify Web Player",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --experimental-scope-hoisting"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "simple-scrollbar": "^0.4.0",
     "spotify-web-api-js": "^1.0.0",
     "svelte": "^3.0.0",
-    "svelte-inspect": "^0.1.2",
     "svelte-routing": "^1.0.0"
   }
 }

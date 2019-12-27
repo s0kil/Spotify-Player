@@ -1,7 +1,7 @@
 <script>
   import "modern-normalize"; // Normalize Browsers Default Style
-  import "simple-scrollbar/simple-scrollbar.css"; // TODO : Add Custom Scrollbar Styles
-  import "./index.css"; // Global Styles
+  import "simple-scrollbar/simple-scrollbar.css";
+  import "./index.css"; // Import Global Styles
 
   import {onMount} from "svelte";
   import {HashGet} from "hashget";
@@ -26,7 +26,7 @@
   import Header from "./components/Header.svelte";
 
   onMount(async () => {
-    // Initialize Scrollbar
+    // Initialize Custom Scrollbar
     scrollbar.initEl(document.getElementById("main-body"));
 
     if (window.location.hash.length) {
@@ -56,6 +56,7 @@
 
     color: rgb(255, 255, 255);
     background-color: rgb(18, 18, 18);
+    overflow: hidden;
   }
 </style>
 

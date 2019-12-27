@@ -1,4 +1,6 @@
 <script>
+  import {fade} from "svelte/transition";
+
   export let name = "";
   export let image = "";
   export let tagline = "";
@@ -43,7 +45,7 @@
 </style>
 
 <div class="card">
-  <img src="{image}" alt="{name}">
+  <img src="{image}" alt="{name}" in:fade={{duration: 300}}>
   <h4>{name}</h4>
   <p>{tagline}</p>
 </div>
