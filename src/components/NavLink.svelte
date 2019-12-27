@@ -13,6 +13,15 @@
   }
 </script>
 
+<style>
+  div {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
 <Link to="{to}" getProps="{getProps}">
-  <slot/>
+  <div>
+    <slot/>
+  </div>
 </Link>

@@ -36,7 +36,6 @@
   }
 
   .nav-item span {
-    /*TODO : Figure Out Why Element Is Not Vertically Aligned*/
     margin-left: 16px;
   }
 
