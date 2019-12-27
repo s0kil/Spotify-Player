@@ -11,7 +11,7 @@
 
 ### Sections
 
-- Navigation Aside [WIP By @s0kil](https://github.com/s0kil)
+- Navigation Aside
   - Home
   - Search
   - Your Library
@@ -19,7 +19,17 @@
 
 - Navigation Top Bar
   - History Router (Backward, Forward Buttons), Upgrade Button, Login Button Bar
-  - Account Button
+  - Login, Logout, `If User Logged In` Show Account
+
+- Music Player
+  - Current Playing Song With Title, Author 
+  - Shuffle Playlist
+  - Previous Song
+  - Play/Pause
+  - Next Song
+  - Repeat/Song,Playlist
+  - Queue
+  - Volume Control
 
 ## Routes
 
